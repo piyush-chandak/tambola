@@ -1,0 +1,24 @@
+<div class="history-managment-wrapper">
+  <div class="no-record" *ngIf="list.length < 1">
+    No History
+  </div>
+
+  <div class="history-list" *ngIf="list.length">
+    <div *ngFor="let item of list; let last = last;">
+      <div class="item" [class.border-bottom]="!last">
+         <div class="number-history" *ngIf="item.number">
+           <span class="text"> Last Number was </span>
+           <span class="number">{{item.number}}</span>
+           <span class="time">{{formatTime(item.createdAt)}}</span>
+         </div>
+
+         <div class="text-history" *ngIf="item.text">
+           <span class="text">{{item.text}}</span>
+           <div class="badge-container" *ngIf="item.badge">
+             <span class="badge {{item.badge.class}}">{{item.badge.text}}</span>
+           </div>
+         </div>
+       </div>
+    </div>
+  </div>
+</div>

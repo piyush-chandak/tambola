@@ -1,0 +1,23 @@
+<div class="schemes-list-wrapper">
+  <div class="create-scheme" *ngIf="isHost">
+    <button class="btn btn-primary" *ngIf="!showInput" (click)="toggleInput(true)"> Add </button>
+
+    <div class="input-group" *ngIf="showInput">
+      <input type="text" class="form-control" placeholder="Scheme" [formControl]="schemeName">
+      <div class="input-group-append" (click)="saveScheme()">
+        <span class="input-group-text">Save</span>
+      </div>
+    </div>
+    <hr />
+  </div>
+
+  <div class="no-record" *ngIf="list.length < 1">
+    No Scheme
+  </div>
+
+  <div class="scheme-list" *ngIf="list.length">
+    <div *ngFor="let item of list; let last = last;">
+      <scheme-list-item [item]="item" [isLast]="last"></scheme-list-item>
+    </div>
+  </div>
+</div>

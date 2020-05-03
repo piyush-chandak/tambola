@@ -1,0 +1,20 @@
+<form [formGroup]="participantForm">
+  <div class="form-group">
+    <input type="text" class="form-control" placeholder="Enter name" formControlName="name">
+    <div *ngIf="f.name.errors" class="invalid-feedback">
+      <div *ngIf="f.name.errors.required">Name is required</div>
+    </div>
+  </div>
+  <table class="table table-bordered ticket">
+    <tbody>
+      <tr *ngFor="let row of ticket">
+        <td class="num" *ngFor="let ticketNumber of row">
+          <input type="text" class="form-control" [formControl]="ticketNumber.numberInput" [value]="ticketNumber.numberInput.value">
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</form>
+
+<hr />
+<button class="btn btn-primary" [disabled]="participantForm.invalid" (click)="saveOrUpdate()">{{participant ? 'Update' : 'Save'}}</button>

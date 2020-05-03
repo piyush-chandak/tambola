@@ -1,0 +1,11 @@
+.tambola-board {
+  .number {
+    display: inline-block;
+    margin: 5px;
+    width: 45px;
+
+    .btn {
+      width: 100%;
+    }
+  }
+}

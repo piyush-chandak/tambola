@@ -1,0 +1,46 @@
+<div class="text-right mb-3" *ngIf="isHost">
+  <button class="btn btn-danger mr-3" (click)="clearAll()">Clear Old Data</button>
+  <button class="btn btn-warning" (click)="setShowModal(true)">Add Participant</button>
+</div>
+
+<div class="row">
+  <div class="col-sm-5">
+    <tambola-board></tambola-board>
+  </div>
+
+  <div class="col-sm-3">
+    <div class="card mb-3" *ngIf="isHost">
+      <div class="card-body">
+        <generate-number></generate-number>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        Schemes
+      </div>
+
+      <div class="card-body">
+        <scheme-list></scheme-list>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-sm-4">
+    <div class="card">
+      <div class="card-header">
+        History
+      </div>
+
+      <div class="card-body">
+        <history-managment></history-managment>
+      </div>
+    </div>
+  </div>
+</div>
+
+<participants-list></participants-list>
+
+<modal-view *ngIf="showModal && isHost" [header]="modalHeader" (closeModal)="closeModal($event)">
+  <add-or-edit-participant [participant]="participant"></add-or-edit-participant>
+</modal-view>

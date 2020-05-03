@@ -1,0 +1,8 @@
+<div class="item" [class.border-bottom]="!isLast">
+  <div class="title">{{item.title}}</div>
+  <div class="actions-wrapper">
+    <button class="btn btn-link btn-sm pl-0" *ngIf="!hideUpadateDeleteBtn">edit</button>
+    <button class="btn btn-link btn-sm" *ngIf="!hideUpadateDeleteBtn" (click)="removeScheme(item)">remove</button>
+    <button class="btn btn-link btn-sm" [class.pl-0]="hideUpadateDeleteBtn" (click)="selectWinner(item)">winner</button>
+  </div>
+</div>

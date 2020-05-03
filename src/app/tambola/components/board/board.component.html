@@ -1,0 +1,5 @@
+<div class="tambola-board">
+  <div class="number" *ngFor="let number of numbers">
+    <button type="button" name="button" class="btn" [class.btn-success]="selectedNumber.indexOf(number) > -1"> {{number}}</button>
+  </div>
+</div>

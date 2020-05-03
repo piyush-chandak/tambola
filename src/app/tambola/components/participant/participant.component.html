@@ -1,0 +1,9 @@
+<div class="participant">
+  <div class="name">
+    {{participant.name}}
+    <button class="btn btn-link" (click)="editParticipant()" *ngIf="isHost">edit</button>
+    <button class="btn btn-link" (click)="deleteParticipant()" *ngIf="isHost">delete</button>
+  </div>
+  <ticket [ticket]="participant.ticket"></ticket>
+  <span class="mr-4 badge badge-success" *ngFor="let item of participant.winners">{{item}}</span>
+</div>

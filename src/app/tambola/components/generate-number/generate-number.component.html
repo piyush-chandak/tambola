@@ -1,0 +1,9 @@
+<div class="text-center">
+  <div class="new-number">
+    {{randomNumber}}
+  </div>
+</div>
+<div class="action-wrapper">
+  <button class="btn btn-primary generate-number right-spacing" [disabled]="numGenratorBtnDisabled" (click)="generateRandomNumber()">New Number</button>
+  <button class="btn btn-success generate-number left-spacing" [disabled]="setNumberBtnDisabled" (click)="setNewNumber()">Set Number</button>
+<div>

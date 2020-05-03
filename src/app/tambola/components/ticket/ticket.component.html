@@ -1,0 +1,9 @@
+<table class="table table-bordered ticket">
+  <tbody>
+    <tr *ngFor="let row of ticket">
+      <td class="num" *ngFor="let ticketNumber of row">
+        <button class="btn btn-sm" [class.btn-primary]="ticketNumber.checked" *ngIf="ticketNumber">{{ticketNumber.number}}</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
